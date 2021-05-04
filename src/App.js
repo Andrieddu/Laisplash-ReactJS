@@ -1,23 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+
+import { BrowserRouter as Router, Switch } from "react-router-dom";
+import { GlobalProvider } from "./context/GlobalState";
+import { AuthProvider } from "./context/AuthContext";
+
+import Home from "./pages/home/Home";
+import Search from "./pages/search/Search";
+import Collection from "./pages/collection/Collection";
+import Login from "./pages/login/Login";
+import Signup from "./pages/signup/Signup";
+import PrivateRoute from "./routes/PrivateRoute";
+import PublicRoute from "./routes/PublicRoute";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <GlobalProvider>
+        <AuthProvider>
+          <Router>
+            <Switch>
+              <PrivateRoute component={Collection} path="/collection" exact />
+              <PublicRoute
+                restricted={true}
+                component={Signup}
+                path="/signup"
+                exact
+              />
+              <PublicRoute
+                restricted={true}
+                component={Login}
+                path="/login"
+                exact
+              />
+              <PublicRoute
+                restricted={false}
+                component={Search}
+                path="/s/:searchTerm"
+                exact
+              />
+              <PublicRoute restricted={false} component={Home} path="/" exact />
+            </Switch>
+          </Router>
+        </AuthProvider>
+      </GlobalProvider>
     </div>
   );
 }

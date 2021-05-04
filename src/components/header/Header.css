@@ -1,0 +1,119 @@
+.border_bottom {
+  border-bottom: 1px solid lightgray;
+}
+
+.header_wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background-color: rgb(255, 255, 255);
+}
+
+.header_container {
+  padding: 0.4rem 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.header_logo {
+  object-fit: contain;
+  cursor: pointer;
+}
+
+.header_input {
+  margin-left: 1.5rem;
+  padding: 0.4rem 0.6rem;
+  border-radius: 50px;
+  background-color: rgba(211, 211, 211, 0.414);
+  flex: 1;
+  display: flex;
+  align-items: center;
+  border: 1px solid white;
+  transition: all 0.2s ease;
+}
+
+.header_input:hover {
+  border: 1px solid lightgray;
+}
+.header_input:focus-within {
+  background-color: transparent;
+  border: 1px solid lightgray;
+}
+
+.header_inputField {
+  margin: 0 0.5rem;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 0.9rem;
+  width: 100%;
+}
+
+.header_icon,
+.header_rightIcon {
+  color: rgb(128, 128, 128);
+  cursor: pointer;
+}
+
+.header_rightIcon {
+  margin: 0 1rem;
+}
+
+.header_icon:hover,
+.header_rightIcon:hover {
+  color: rgb(36, 35, 35);
+}
+
+.header_right {
+  padding: 0.4rem 0.2rem 0.4rem 0.6rem;
+  display: flex;
+  align-items: center;
+}
+
+.header_rightButtonWrapper {
+  margin-left: 1rem;
+}
+
+.header_rightButton:hover {
+  color: black;
+}
+
+.header_rightButton {
+  text-transform: none !important;
+  margin: 0 0.5rem !important;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: grey;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.header_rightMenuItem {
+  font-size: 0.9rem;
+}
+
+.header_link {
+  text-decoration: none;
+  color: black;
+}
+
+.header_rightAvatar {
+  width: 2rem !important;
+  height: 2rem !important;
+  margin-right: -0.1rem;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 500px) {
+  .header {
+    padding: 0.3rem 0.5rem;
+  }
+  .header_input {
+    margin: 0 0 0 0.4rem;
+  }
+  .header_right {
+    padding: 0.4rem 0;
+  }
+}
