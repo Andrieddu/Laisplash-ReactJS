@@ -26,9 +26,6 @@ export function AuthProvider({ children }) {
             email,
           });
         console.log(result);
-      })
-      .catch((error) => {
-        console.log(error);
       });
   }
 

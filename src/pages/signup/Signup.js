@@ -36,8 +36,9 @@ function Signup() {
         passwordRef.current.value
       );
       history.push("/");
-    } catch {
-      setError("Failed to create an account");
+    } catch (error) {
+      console.log(error.message);
+      setError(error.message);
     }
     setLoading(false);
   }
@@ -71,7 +72,7 @@ function Signup() {
             placeholder="Email address"
             id="email"
             className="email"
-            type="text"
+            type="email"
             ref={emailRef}
             required
           />

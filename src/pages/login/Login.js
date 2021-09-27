@@ -26,8 +26,9 @@ function Login() {
       setLoading(true);
       await login(emailRef.current.value, passwordRef.current.value);
       history.push("/");
-    } catch (e) {
-      setError(e.message);
+    } catch (error) {
+      console.log(error.message);
+      setError(error.message);
     }
     setLoading(false);
   }
@@ -53,7 +54,7 @@ function Login() {
             placeholder="Email address"
             id="Email"
             className="Email"
-            type="text"
+            type="email"
             ref={emailRef}
             required
           />
